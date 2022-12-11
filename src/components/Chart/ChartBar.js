@@ -6,7 +6,7 @@ const ChartBar = (props) => {
   
   // 차트에 채워질 값을 1~100으로 나타내기
   let barFillHeight = '0%';
-  if(props.maxValue > 0 ) {
+  if(props.maxValue> 0 ) {
     barFillHeight = Math.round((props.value / props.maxValue) * 100) + '%';
   }
 

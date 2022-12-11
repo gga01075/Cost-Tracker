@@ -4,6 +4,12 @@ import ChartBar from "./ChartBar";
 import "./Chart.css";
 
 const Chart = (props) => {
+   
+  const dataPointValues = props.dataPoints.map(dataPoint => dataPoint.value)
+
+  // maxValue : 모든 달을 살펴보고 전체 달 중에서 가장 큰값을 찾아야한다. 
+  const totalMaximum = Math.max(...dataPointValues);
+
   return (
     <div className="chart">
       {props.dataPoints.map((dataPoint) => (
@@ -18,7 +24,7 @@ const Chart = (props) => {
         <ChartBar
           key={dataPoint.id}
           value={dataPoint.value}
-          maxValue={null}
+          maxValue={totalMaximum}
           label={dataPoint.label}
         />
       ))}
